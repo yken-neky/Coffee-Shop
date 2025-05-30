@@ -4,10 +4,17 @@ import React from 'react'
 import Image from 'next/image'
 import { products } from '@/data/products'
 import { ShoppingCart } from 'lucide-react'
+import { toast } from 'sonner'
 
 export default function ProductList() {
+  const handleAddToCart = () => {
+    toast.success('Producto añadido al carrito', {
+      position: 'bottom-right',
+    })
+  }
+
   return (
-    <section id="productos" className="py-20 bg-white">
+    <section id="productos" className="py-20 bg-[#F5EDE6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center text-[#4A3428] mb-12">
           Nuestros Productos
@@ -17,7 +24,7 @@ export default function ProductList() {
           {products.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="relative h-64">
                 <Image
@@ -40,8 +47,8 @@ export default function ProductList() {
                     ${product.price.toFixed(2)}
                   </span>
                   <button
-                    className="flex items-center gap-2 bg-[#4A3428] text-white px-4 py-2 rounded-lg hover:bg-[#6B4D3B] transition-colors"
-                    onClick={() => {/* Implementar lógica del carrito */}}
+                    onClick={handleAddToCart}
+                    className="flex items-center gap-2 bg-[#4A3428] text-white px-4 py-2 rounded-lg hover:bg-[#6B4D3B] transition-all duration-300"
                   >
                     <ShoppingCart size={20} />
                     Añadir

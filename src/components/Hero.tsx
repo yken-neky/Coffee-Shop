@@ -23,8 +23,11 @@ export default function Hero() {
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
             Descubre el verdadero sabor del café
           </h1>
-          <p className="text-xl md:text-2xl max-w-2xl">
-            Seleccionamos los mejores granos de café para brindarte una experiencia única en cada taza. Desde el cultivo hasta tu mesa, cuidamos cada detalle.
+          <p className="text-xl md:text-xl max-w-5xl">
+            Seleccionamos los mejores granos de café para brindarte una experiencia única en cada taza.
+          </p>
+          <p className="text-xl md:text-xl max-w-5xl">
+            Desde el cultivo hasta tu mesa, cuidamos cada detalle.
           </p>
           <a
             href="#productos"
